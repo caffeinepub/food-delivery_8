@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "UI design for a food ordering app inspired by Zomato and Swiggy",
+  "architectural_notes": [
+    "UI design inspired by Zomato and Swiggy food ordering apps",
+    "Profile menu implemented as dropdown/sidebar allowing users to edit name, email, phone, manage addresses, and settings",
+    "Using Lucide React or Hero Icons for consistent line-art style category iconography",
+    "Custom FH logo with circular container and fork detail integrated into header branding",
+    "Currency set to INR (₹) for Indian market",
+    "Location functionality includes manual address entry and current location detection",
+    "Restaurant cards display ratings with total number of raters"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-home-page-with-a-prominent-search-bar-for-restaurants-and-dishes-featured-restaurant-cards-with-images-ratings-and-cuisine-types-and-category-filters-e-g-pizza-chinese-fast-food-desserts",
+      "title": "Create a home page with a prominent search bar for restaurants and dishes, featured restaurant cards with images, ratings, and cuisine types, and category filters (e.g., Pizza, Chinese, Fast Food, Desserts)",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-restaurant-detail-page-showing-restaurant-banner-image-menu-items-organized-by-categories-item-cards-with-name-description-price-and-add-to-cart-button-and-restaurant-information-rating-reviews-location-opening-hours",
+      "title": "Design a restaurant detail page showing restaurant banner image, menu items organized by categories, item cards with name, description, price, and add-to-cart button, and restaurant information (rating, reviews, location, opening hours)",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-cart-sidebar-or-bottom-sheet-showing-selected-items-with-quantity-controls-item-prices-subtotal-delivery-fee-taxes-and-total-amount-with-a-checkout-button",
+      "title": "Implement a cart sidebar or bottom sheet showing selected items with quantity controls, item prices, subtotal, delivery fee, taxes, and total amount with a checkout button",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-navigation-header-with-app-logo-location-selector-search-functionality-and-cart-icon-with-item-count-badge",
+      "title": "Create a navigation header with app logo, location selector, search functionality, and cart icon with item count badge",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-visually-cohesive-interface-using-a-vibrant-food-focused-color-scheme-with-warm-accent-colors-reds-oranges-or-yellows-clean-typography-suitable-for-food-content-generous-use-of-high-quality-food-imagery-and-card-based-layouts-with-rounded-corners-and-subtle-shadows-for-depth",
+      "title": "Design a visually cohesive interface using a vibrant, food-focused color scheme with warm accent colors (reds, oranges, or yellows), clean typography suitable for food content, generous use of high-quality food imagery, and card-based layouts with rounded corners and subtle shadows for depth",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-profile-icon-button-in-the-navigation-header-positioned-immediately-to-the-left-of-the-cart-icon-in-the-top-right-corner",
+      "title": "Add a profile icon button in the navigation header positioned immediately to the left of the cart icon in the top-right corner",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-dropdown-sidebar-profile-menu-that-appears-when-clicking-the-profile-icon-containing-sections-for-profile-editing-name-email-phone-address-book-management-and-settings-with-a-logout-option-at-the-bottom",
+      "title": "Implement a dropdown/sidebar profile menu that appears when clicking the profile icon, containing sections for: profile editing (name, email, phone), address book management, and settings, with a logout option at the bottom",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-component-to-display-the-new-custom-fh-logo-on-the-left-side-replacing-or-enhancing-the-current-logo-branding",
+      "title": "Update the Header component to display the new custom FH logo on the left side, replacing or enhancing the current logo/branding",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-category-filter-icons-in-the-categoryfilter-component-with-consistent-line-art-style-icons-from-lucide-react-use-pizza-icon-for-pizza-category-utensilscrossed-icon-for-chinese-category-beef-icon-for-fast-food-category-and-icecream-icon-for-dessert-category",
+      "title": "Replace the category filter icons in the CategoryFilter component with consistent line-art style icons from Lucide React: use Pizza icon for Pizza category, UtensilsCrossed icon for Chinese category, Beef icon for Fast Food category, and IceCream icon for Dessert category",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-login-authentication-screen-that-appears-when-a-non-authenticated-user-clicks-the-profile-icon-prompting-them-to-log-in-or-sign-up-with-messaging-like-save-your-preferences-to-order-faster",
+      "title": "Implement a login/authentication screen that appears when a non-authenticated user clicks the profile icon, prompting them to log in or sign up with messaging like 'Save your preferences to order faster'",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-fh-logo-image-as-a-static-asset-from-frontend-public-assets-generated-directory-in-the-header-component",
+      "title": "Render the generated FH logo image as a static asset from frontend/public/assets/generated directory in the Header component",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-working-search-functionality-in-the-searchbar-component-on-the-homepage-to-filter-restaurants-by-name-cuisine-or-dish-when-user-types-in-the-search-input",
+      "title": "Implement working search functionality in the SearchBar component on the HomePage to filter restaurants by name, cuisine, or dish when user types in the search input",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-categoryfilter-component-functional-so-that-clicking-a-category-button-filters-the-displayed-restaurants-to-show-only-those-matching-the-selected-category",
+      "title": "Make the CategoryFilter component functional so that clicking a category button filters the displayed restaurants to show only those matching the selected category",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-change-all-price-displays-throughout-the-application-from-usd-to-inr-including-cart-items-menu-items-price-breakdown-in-cart-sidebar-and-restaurant-cards",
+      "title": "Change all price displays throughout the application from USD ($) to INR (₹) including cart items, menu items, price breakdown in cart sidebar, and restaurant cards",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-locationselector-component-to-allow-users-to-manually-enter-a-delivery-address-or-use-their-current-browser-location-for-delivery",
+      "title": "Enhance the LocationSelector component to allow users to manually enter a delivery address or use their current browser location for delivery",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-restaurant-listings-on-homepage-from-6-to-at-least-20-restaurants-with-diverse-cuisine-types-and-ratings",
+      "title": "Expand the restaurant listings on HomePage from 6 to at least 20 restaurants with diverse cuisine types and ratings",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-at-least-8-category-options-in-the-categoryfilter-component-what-s-on-your-mind-section-including-current-categories-plus-new-options-like-burgers-biryani-north-indian-south-indian",
+      "title": "Add at least 8 category options in the CategoryFilter component ('What's on your mind' section) including current categories plus new options like Burgers, Biryani, North Indian, South Indian",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-view-all-button-in-the-featured-restaurants-section-on-homepage-that-opens-a-full-page-scrollable-list-of-all-restaurants-with-a-search-bar-at-the-top",
+      "title": "Implement a 'View All' button in the featured restaurants section on HomePage that opens a full-page scrollable list of all restaurants with a search bar at the top",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-restaurantcard-component-to-display-both-the-numeric-rating-and-the-number-of-people-who-have-rated-the-restaurant-e-g-4-5-1-2k-ratings",
+      "title": "Update RestaurantCard component to display both the numeric rating and the number of people who have rated the restaurant (e.g., '4.5 (1.2K ratings)')",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create UI design for food ordering app (Zomato/Swiggy style)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add profile icon in header with dropdown menu for profile editing, address book, and settings",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create custom FH logo with circular/rounded container and fork detail in H",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Replace category icons with consistent line-art style icons from Lucide React",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement login/authentication screen for user access",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Fix search bar functionality to make it working",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Make 'What's on your mind' filter functional for item selection",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Change currency from USD to INR for Indian users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add manual address entry and current location selection for delivery",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Expand restaurant listings and add more options in 'What's on your mind' section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement 'View All' section with scrollable restaurant list and search bar",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Display restaurant ratings with number of people who rated on cards",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Food Delivery",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,162 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-working-search-functionality-in-the-searchbar-component-on-the-homepage-to-filter-restaurants-by-name-cuisine-or-dish-when-user-types-in-the-search-input",
+      "featureTitle": "Implement working search functionality in the SearchBar component on the HomePage to filter restaurants by name, cuisine, or dish when user types in the search input",
+      "files": [
+        "frontend/src/components/SearchBar.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-categoryfilter-component-functional-so-that-clicking-a-category-button-filters-the-displayed-restaurants-to-show-only-those-matching-the-selected-category",
+      "featureTitle": "Make the CategoryFilter component functional so that clicking a category button filters the displayed restaurants to show only those matching the selected category",
+      "files": [
+        "frontend/src/components/CategoryFilter.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-change-all-price-displays-throughout-the-application-from-usd-to-inr-including-cart-items-menu-items-price-breakdown-in-cart-sidebar-and-restaurant-cards",
+      "featureTitle": "Change all price displays throughout the application from USD ($) to INR (₹) including cart items, menu items, price breakdown in cart sidebar, and restaurant cards",
+      "files": [
+        "frontend/src/components/CartSidebar.tsx",
+        "frontend/src/components/MenuItem.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/RestaurantDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enhance-the-locationselector-component-to-allow-users-to-manually-enter-a-delivery-address-or-use-their-current-browser-location-for-delivery",
+      "featureTitle": "Enhance the LocationSelector component to allow users to manually enter a delivery address or use their current browser location for delivery",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/LocationModal.tsx",
+        "frontend/src/components/LocationSelector.tsx",
+        "frontend/src/contexts/LocationContext.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-expand-the-restaurant-listings-on-homepage-from-6-to-at-least-20-restaurants-with-diverse-cuisine-types-and-ratings",
+      "featureTitle": "Expand the restaurant listings on HomePage from 6 to at least 20 restaurants with diverse cuisine types and ratings",
+      "files": [
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-at-least-8-category-options-in-the-categoryfilter-component-what-s-on-your-mind-section-including-current-categories-plus-new-options-like-burgers-biryani-north-indian-south-indian",
+      "featureTitle": "Add at least 8 category options in the CategoryFilter component ('What's on your mind' section) including current categories plus new options like Burgers, Biryani, North Indian, South Indian",
+      "files": [
+        "frontend/src/components/CategoryFilter.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-view-all-button-in-the-featured-restaurants-section-on-homepage-that-opens-a-full-page-scrollable-list-of-all-restaurants-with-a-search-bar-at-the-top",
+      "featureTitle": "Implement a 'View All' button in the featured restaurants section on HomePage that opens a full-page scrollable list of all restaurants with a search bar at the top",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AllRestaurantsPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-restaurantcard-component-to-display-both-the-numeric-rating-and-the-number-of-people-who-have-rated-the-restaurant-e-g-4-5-1-2k-ratings",
+      "featureTitle": "Update RestaurantCard component to display both the numeric rating and the number of people who have rated the restaurant (e.g., '4.5 (1.2K ratings)')",
+      "files": [
+        "frontend/src/components/RestaurantCard.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/RestaurantDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

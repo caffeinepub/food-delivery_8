@@ -1,0 +1,208 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix search functionality, category filters, currency, location management, and restaurant listings",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Implement working search functionality to filter restaurants by name, cuisine, or dish in real-time",
+      "acceptanceCriteria": [
+        "Search input filters the displayed restaurant cards in real-time as user types",
+        "Search matches against restaurant name, cuisine types, and menu item names",
+        "Search is case-insensitive",
+        "Clear search button appears when input has text"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SearchBar.tsx",
+          "operation": "modify",
+          "description": "Add state management for search input value, onChange handler to lift search value to parent, and clear button that appears when input has text. Include search icon and clear (X) icon button."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add state for search query, pass search value and handler to SearchBar component, implement filtering logic that matches search query against restaurant name, cuisines array, and menu item names (case-insensitive). Apply filter before rendering restaurant cards grid."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Make CategoryFilter component functional to filter restaurants by selected category",
+      "acceptanceCriteria": [
+        "Clicking a category button highlights it as active",
+        "Only restaurants matching the selected category are displayed",
+        "Clicking the same category again deselects it and shows all restaurants",
+        "Category filter works in combination with search functionality"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CategoryFilter.tsx",
+          "operation": "modify",
+          "description": "Add props for selectedCategory and onCategorySelect callback. Implement click handler that toggles category selection (clicking active category deselects it). Apply active styling to selected category button."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add state for selectedCategory, pass selectedCategory and handler to CategoryFilter component. Implement filtering logic that combines both search query and selected category filters. Apply combined filters to restaurant list before rendering."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Change all price displays from USD ($) to INR (₹) throughout the application",
+      "acceptanceCriteria": [
+        "All prices display with ₹ symbol instead of $",
+        "Price formatting follows Indian number system conventions",
+        "Currency change applies to all components: MenuItem, CartSidebar, RestaurantCard"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/MenuItem.tsx",
+          "operation": "modify",
+          "description": "Replace dollar sign with ₹ symbol in price display. Update price formatting to use Indian number conventions."
+        },
+        {
+          "path": "frontend/src/components/CartSidebar.tsx",
+          "operation": "modify",
+          "description": "Replace all dollar signs with ₹ symbol in cart item prices, subtotal, delivery fee, tax, and total. Update price formatting to follow Indian number system conventions."
+        },
+        {
+          "path": "frontend/src/pages/RestaurantDetailPage.tsx",
+          "operation": "modify",
+          "description": "Update all menu item price displays to use ₹ symbol instead of $ in the hardcoded restaurantData object and any price rendering."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Update restaurant data objects to use ₹ symbol for any price-related fields if present in restaurant cards."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Enhance LocationSelector to allow manual address entry or browser location detection",
+      "acceptanceCriteria": [
+        "Clicking LocationSelector opens a modal or dropdown with two options: 'Enter Address Manually' and 'Use Current Location'",
+        "Manual entry provides a text input field for address entry with save functionality",
+        "Current location option requests browser geolocation permission and displays the detected address",
+        "Selected address is displayed in the LocationSelector button",
+        "Address persists in application state"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/LocationContext.tsx",
+          "operation": "create",
+          "description": "Create location context providing state for current delivery address and methods to update address (setAddress). Include localStorage persistence for selected address."
+        },
+        {
+          "path": "frontend/src/components/LocationSelector.tsx",
+          "operation": "modify",
+          "description": "Add click handler to open location modal. Display current address from LocationContext. Import and use the location modal component."
+        },
+        {
+          "path": "frontend/src/components/LocationModal.tsx",
+          "operation": "create",
+          "description": "Create modal component with two options: 'Enter Address Manually' button and 'Use Current Location' button. Manual entry shows text input with save button. Current location uses browser Geolocation API to fetch coordinates and reverse geocode to address string. Update address in LocationContext on save or location detection. Include close button and overlay backdrop."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap application with LocationProvider to make location state available throughout the app."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Expand restaurant listings from 6 to at least 20 restaurants with diverse cuisines",
+      "acceptanceCriteria": [
+        "HomePage displays at least 20 restaurant cards",
+        "Restaurants include variety of cuisines beyond current Pizza, Chinese, Fast Food, and Desserts",
+        "Each restaurant has realistic sample data including name, rating, cuisine, delivery time, and distance"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Expand the hardcoded restaurants array from 6 to at least 20 entries. Add diverse cuisine types including Burgers, Biryani, North Indian, South Indian, Italian, Mexican, Thai, Japanese, Continental, Bakery. Ensure each restaurant has realistic name, rating (3.5-5.0), cuisines array, delivery time (20-45 mins), distance (1-8 km), and image path. Include ratingCount field for each restaurant."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Add at least 8 category options in CategoryFilter including Burgers, Biryani, North Indian, South Indian",
+      "acceptanceCriteria": [
+        "CategoryFilter displays at least 8 category buttons",
+        "New categories use appropriate Lucide React icons",
+        "Each category has corresponding restaurants in the expanded listings",
+        "Horizontal scroll works smoothly with increased categories"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CategoryFilter.tsx",
+          "operation": "modify",
+          "description": "Expand categories array to include at least 8 options: Pizza, Chinese, Fast Food, Desserts, Burgers, Biryani, North Indian, South Indian. Import and assign appropriate Lucide React icons for new categories (e.g., Sandwich for Burgers, Soup for Biryani, Drumstick for North Indian, Leaf for South Indian). Ensure horizontal scroll container accommodates all categories."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure expanded restaurant data includes restaurants for each of the 8+ categories. Update filtering logic to match against the expanded category list."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Implement View All button that opens full-page scrollable restaurant list with search bar",
+      "acceptanceCriteria": [
+        "View All button is clearly visible in the restaurants section header",
+        "Clicking View All navigates to a new page or opens a modal showing all restaurants",
+        "Page includes a search bar for filtering restaurants",
+        "Restaurant list is vertically scrollable",
+        "Each restaurant entry maintains card layout with image, rating, cuisine info"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add 'View All' button in the restaurants section header with click handler that navigates to /restaurants route. Limit displayed restaurants on HomePage to first 12 entries when not viewing all."
+        },
+        {
+          "path": "frontend/src/pages/AllRestaurantsPage.tsx",
+          "operation": "create",
+          "description": "Create full-page restaurant listing component with search bar at top, vertically scrollable container displaying all restaurants using RestaurantCard component. Include back button to return to HomePage. Implement local search filtering that works independently from HomePage search."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route configuration for /restaurants path that renders AllRestaurantsPage component. Register route in the router configuration alongside existing home and restaurant detail routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Display rating count alongside numeric rating on RestaurantCard (e.g., '4.5 (1.2K ratings)')",
+      "acceptanceCriteria": [
+        "Each restaurant card shows rating number followed by count of ratings in parentheses",
+        "Rating count uses abbreviated format for large numbers (e.g., 1.2K, 5.3K)",
+        "Rating and count are visually grouped together",
+        "Star icon accompanies the rating display"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RestaurantCard.tsx",
+          "operation": "modify",
+          "description": "Add ratingCount prop to component interface. Update rating display to show both numeric rating and count in format 'X.X (Y.YK ratings)'. Implement number formatting function that converts counts above 1000 to abbreviated format (1.2K, 5.3K). Keep star icon with rating display."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add ratingCount field to each restaurant object in the hardcoded data array with realistic values (500-15000). Pass ratingCount to RestaurantCard component."
+        },
+        {
+          "path": "frontend/src/pages/RestaurantDetailPage.tsx",
+          "operation": "modify",
+          "description": "Add ratingCount field to restaurantData object entries. Update RestaurantInfo component usage to display rating count alongside rating if that component is used for rating display."
+        }
+      ]
+    }
+  ]
+}
